@@ -6,7 +6,10 @@ namespace CSharpMasters
     {
         static void Main(string[] args)
         {
-            Assignment2.Run();
+            // Assignment2.Run();
+
+            Assignment3.Run();
+
         }
     }
 }
