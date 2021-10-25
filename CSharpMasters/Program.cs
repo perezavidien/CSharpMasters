@@ -8,7 +8,9 @@ namespace CSharpMasters
         {
             // Assignment2.Run();
 
-            Assignment3.Run();
+            // Assignment3.Run();
+
+            Assignment4.Run();
 
         }
     }
