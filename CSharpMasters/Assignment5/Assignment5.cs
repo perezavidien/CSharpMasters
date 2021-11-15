@@ -9,7 +9,7 @@ namespace CSharpMasters
     {
         public static void Run()
         {
-            var employeeList = new List<Employee2>
+            var employeeList = new Employee2 []
             {
                 CreateEmployee("Juan", "Dela", "Cruz", SalaryFrequency.Monthly, 40000),
                 CreateEmployee("Bea", "A.", "Rosales", SalaryFrequency.Hourly, 2000, 40),
@@ -23,11 +23,16 @@ namespace CSharpMasters
                 CreateEmployee("Kasandra", "L.", "Cortez", SalaryFrequency.Monthly, 55000)
             };
 
-            var sortedEmployees = employeeList.OrderBy(e => e.GetMonthlyPayout()).ToList();
+            IEnumerable<Employee2> enumerableEmployees = employeeList;
+
+            var sortedEmployees = enumerableEmployees.OrderBy(e => e.GetMonthlyPayout()).ToList();
 
             foreach (var e in sortedEmployees)
             {
-                Console.WriteLine($"{e.GetFullName()}'s Monthly Payout is Php {e.GetMonthlyPayout()}");
+                Console.WriteLine($"Name: {e.GetFullName()}");
+                Console.WriteLine($"Monthly Payout: Php { e.GetMonthlyPayout() }");                
+                Console.WriteLine("--------------------------");
+                Console.WriteLine();
             }
 
             Console.ReadLine();
